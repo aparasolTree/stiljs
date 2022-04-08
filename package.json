@@ -1,6 +1,6 @@
 {
 	"name": "el-stylejs",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "./src/mian.ts",
 	"description": "Gets the specified element style",
 	"scripts": {
