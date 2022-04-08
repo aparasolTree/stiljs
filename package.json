@@ -18,5 +18,5 @@
 		"typescript": "^4.5.4",
 		"vite": "^2.9.0"
 	},
-	"unpkg": "dist/el-style.iife.js"
+	"unpkg": "dist/el-stylejs.iife.js"
 }
