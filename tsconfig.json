@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
-		"target": "es2015",
+		"target": "es5",
 		"useDefineForClassFields": true,
-		"module": "ESNext",
+		"module": "CommonJS",
 		"lib": [
 			"ESNext",
 			"DOM"
