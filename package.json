@@ -1,0 +1,21 @@
+{
+	"name": "el-stylejs",
+	"version": "0.1.0",
+	"main": "./src/mian.ts",
+	"description": "Gets the specified element style",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/xlws-js/el-stylejs.git"
+	},
+	"author": "xlws-js",
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^4.5.4",
+		"vite": "^2.9.0"
+	}
+}
