@@ -76,13 +76,25 @@ const styleStr = `.box {
     backdrop-filter: blur(3px);
     z-index: 9999;
     display: none;
+    max-width: 80vw;
 }
 
 .pre {
-    max-width: 80vw;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tips {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #f1f5f8;
+    color: #333;
+    border-radius: 6px;
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
 }`
 
 createElement({ tag: 'style', props: {}, children: styleStr }, head)
@@ -100,3 +112,4 @@ export const plane = createElement({
         }
     ],
 }, body)
+export const tips = createElement({ tag: 'div', props: { class: 'tips' } }, body)

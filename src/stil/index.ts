@@ -1,6 +1,6 @@
 import { sheets } from '../shared/sheets'
 import { handleLink } from '../shared/handlerLink'
-import { plane, box, setStyle } from '../shared/element'
+import { plane, box, setStyle, tips } from '../shared/element'
 import { useElementBounding } from "../composition/useElementBounding"
 import { useElementByPoint } from "../composition/useElementByPoint"
 import { useElementStyleStr } from "../composition/useElementStyleStr"
@@ -72,9 +72,13 @@ const Stil = {
                 if (StyleStr && StyleStr !== "{}") {
                     try {
                         await navigator.clipboard.writeText(joinObject(JSON.parse(StyleStr)))
-                        alert('🆗')
+                        tips.textContent = 'copy success!!! 😄'
+                        tips.style.top = '20px'
                     } catch (error) {
-                        console.log(error)
+                        tips.textContent = 'copy error!!! (。・＿・。)ﾉI’m sorry~'
+                        tips.style.top = '20px'
+                    } finally {
+                        setTimeout(() => { tips.style.top = '-100%' }, 2000)
                     }
                 }
             }
