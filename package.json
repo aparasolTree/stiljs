@@ -1,6 +1,6 @@
 {
 	"name": "stiljs",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"main": "./src/main.ts",
 	"description": "Gets the specified element style",
 	"scripts": {
@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/xlws-js/stiljs.git"
+		"url": "git+https://github.com/aparasolTree/stiljs.git"
 	},
 	"author": "xlws-js",
 	"license": "MIT",
