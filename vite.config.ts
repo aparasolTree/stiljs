@@ -4,7 +4,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: "./src/main.ts",
-            formats: ['iife', "umd"],
+            formats: ['iife'],
             name: 'bundle.js'
         }
     }

@@ -1,2 +1,2 @@
-import elStyle from './el-style'
-elStyle.start()
+import Stil from './stil'
+Stil.start()
