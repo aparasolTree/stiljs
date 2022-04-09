@@ -1,7 +1,7 @@
 {
-	"name": "el-stylejs",
-	"version": "0.1.1",
-	"main": "./src/mian.ts",
+	"name": "stylejs",
+	"version": "0.1.0",
+	"main": "./src/main.ts",
 	"description": "Gets the specified element style",
 	"scripts": {
 		"dev": "vite",
@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/xlws-js/el-stylejs.git"
+		"url": "git+https://github.com/xlws-js/stylejs.git"
 	},
 	"author": "xlws-js",
 	"license": "MIT",
@@ -18,5 +18,9 @@
 		"typescript": "^4.5.4",
 		"vite": "^2.9.0"
 	},
-	"unpkg": "dist/el-stylejs.iife.js"
+	"unpkg": "dist/el-stylejs.iife.js",
+	"dependencies": {
+		"el-stylejs": "^0.1.1",
+		"spacingjs": "^1.0.7"
+	}
 }

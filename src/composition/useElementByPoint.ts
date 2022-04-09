@@ -16,7 +16,7 @@ export function useElementByPoint(options: UseElementByPointOptions) {
             if (['BODY', "HTML"].includes(el!.nodeName)) return
             element.value = el
         }
-    }, { immediate: true })
+    }, { immediate: false })
 
     return {
         element,

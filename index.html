@@ -3,28 +3,87 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Gets the specified element style">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 	<title>Style.js</title>
 </head>
 
 <body>
-	<header class="header">
-		<nav class="nav">
-			<div class="logo">
-				<a href="/">El-Style.js</a>
+	<header class="fixed left-0 top-0 right-0 z-40 shadow-md px-7 py-2 bg-gray-100">
+		<nav class="flex justify-between items-center">
+			<div>
+				<a href="/" class="text-2xl">Style.js</a>
 			</div>
 			<div>
-				<button class="style-btn">
+				<a href="https://github.com/xlws-js/stylejs" class="font-bold mr-5 hover:underline">Github</a>
+				<button class="bg-gray-800 rounded-md px-2 py-1 cuesor-pointer" id="stylejs-time">
 					🌙
 				</button>
 			</div>
 		</nav>
 	</header>
-	<main style="overflow: hidden;">
-		<div class="package-name">El-Style.js</div>
-		<div class="description">Gets the specified element style</div>
+	<main class="relative overflow-hidden" style="height: 100vh; width: 100vw;">
+		<section class="flex justify-center flex-col items-center absolute h-full w-full z-20">
+			<div class="text-center text-9xl font-bold">Style.js</div>
+			<div class="mt-10 text-gray-400 text-2xl">Gets the specified element style</div>
+			<h2 class="font-bold text-4xl mt-14">How to use ↓</h2>
+			<button id="stylejs-popup" class="font-bold mt-10 text-2xl hover:underline">Click</button>
+		</section>
+		<section id="stylejs-use" class="flex justify-center flex-col items-center absolute h-full w-full z-20"
+			style="backdrop-filter: blur(5px); display: none;">
+			<div class="w-3/4 bg-gray-100 rounded-3xl shadow-2xl p-10 flex flex-col">
+				<div class="bg-white shadow-md rounded-md p-2 text-center m-4">
+					<h3 class="w-8 h-8 flex justify-center items-center rounded-full bg-red-500 text-white mx-auto">1
+					</h3>
+					Include
+					<div class="bg-gray-200 rounded-md my-2 py-2">
+						&lt;script src="https://unpkg.com/stylejs" defer&gt;&lt;/script&gt;
+					</div>
+					in your HTML page.
+				</div>
+				<div class="flex">
+					<div class="bg-white shadow-md rounded-md p-2 text-center m-4 flex-1">
+						<h3 class="w-8 h-8 flex justify-center items-center rounded-full bg-red-500 text-white mx-auto">
+							2
+						</h3>
+						Hold down the <kbd class="bg-gray-600 text-white px-2 rounded shadow-md">a</kbd> key and move
+						the mouse to
+						the
+						specified element
+						to view the style
+					</div>
+					<div class="bg-white shadow-md rounded-md p-2 text-center m-4 flex-1">
+						<h3 class="w-8 h-8 flex justify-center items-center rounded-full bg-red-500 text-white mx-auto">
+							3
+						</h3>
+						Press and hold the <kbd class="bg-gray-600 text-white px-2 rounded shadow-md">c</kbd> key to
+						copy the style text
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="bg-red-500 absolute origin-top" id="mask"
+			style="height: 100vh; width: 200vw; transform: translate(-50%, -50%) rotate(18deg);">
+		</div>
 	</main>
+	<script>
+		const popup = document.querySelector('#stylejs-popup')
+		const use = document.querySelector('#stylejs-use')
+		const time = document.querySelector('#stylejs-time')
+
+		const date = new Date().getHours()
+		const icon = date > 6 && date < 18 ? '🌞' : '🌙'
+		time.textContent = icon
+
+		popup.addEventListener('click', () => use.style.display = 'flex')
+		use.addEventListener('click', (event) => {
+			if (event.target === use) {
+				use.style.display = 'none'
+			}
+		})
+
+	</script>
 	<script type="module" async src="/src/main.ts"></script>
 </body>
 

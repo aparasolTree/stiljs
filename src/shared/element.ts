@@ -62,17 +62,7 @@ const styleStr = `.box {
     transition: all 0.05s linear;
     pointer-events: none;
     z-index: 9999;
-}
-
-.point {
-    position: fixed;
-    pointer-events: none;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-    background-color: #badc58;
-    z-index: 9999;
+    display: none;
 }
 
 .plane {
@@ -80,18 +70,24 @@ const styleStr = `.box {
     right: 20px;
     top: 20px;
     pointer-events: none;
-    display: inline-block;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
     backdrop-filter: blur(3px);
     z-index: 9999;
+    display: none;
+}
+
+.pre {
+    max-width: 80vw;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }`
 
 createElement({ tag: 'style', props: {}, children: styleStr }, head)
 
 export const box = createElement({ tag: 'div', props: { class: 'box' } }, body)
-export const point = createElement({ tag: 'div', props: { class: 'point' } }, body)
 export const plane = createElement({
     tag: 'div',
     props: {
