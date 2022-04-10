@@ -53,7 +53,7 @@ export function createElement(vnode: Vnode, container: HTMLElement) {
 
 const body = document.body
 const head = document.head
-const styleStr = `.box {
+const styleStr = `.stiljs-box {
     position: fixed;
     background-color: #badc58;
     opacity: .4;
@@ -65,7 +65,7 @@ const styleStr = `.box {
     display: none;
 }
 
-.plane {
+.stiljs-plane {
     position: fixed;
     right: 20px;
     top: 20px;
@@ -79,12 +79,15 @@ const styleStr = `.box {
     max-width: 80vw;
 }
 
-.pre {
+.stiljs-pre {
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 700;
+    font-size: 12px;
+    pointer-events: none;
 }
 
-.tips {
+.stiljs-tips {
     position: fixed;
     top: -100%;
     left: 50%;
@@ -95,21 +98,35 @@ const styleStr = `.box {
     border-radius: 6px;
     z-index: 999;
     transition: all 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.stiljs-tag-name {
+    font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+    pointer-events: none;
 }`
 
 createElement({ tag: 'style', props: {}, children: styleStr }, head)
 
-export const box = createElement({ tag: 'div', props: { class: 'box' } }, body)
+export const box = createElement({ tag: 'div', props: { class: 'stiljs-box' } }, body)
 export const plane = createElement({
     tag: 'div',
     props: {
-        class: 'plane'
+        class: 'stiljs-plane'
     },
     children: [
         {
+            tag: 'div',
+            props: { class: 'stiljs-tag-name' }
+        },
+        {
             tag: 'pre',
-            props: { class: 'pre' }
+            props: { class: 'stiljs-pre' }
         }
     ],
 }, body)
-export const tips = createElement({ tag: 'div', props: { class: 'tips' } }, body)
+export const pre = plane.querySelector('.stiljs-pre')!
+export const tagName = plane.querySelector('.stiljs-tag-name')!
+export const tips = createElement({ tag: 'div', props: { class: 'stiljs-tips' } }, body)

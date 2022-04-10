@@ -1,6 +1,6 @@
 import { sheets } from '../shared/sheets'
 import { handleLink } from '../shared/handlerLink'
-import { plane, box, setStyle, tips } from '../shared/element'
+import { plane, box, setStyle, tips, tagName, pre } from '../shared/element'
 import { useElementBounding } from "../composition/useElementBounding"
 import { useElementByPoint } from "../composition/useElementByPoint"
 import { useElementStyleStr } from "../composition/useElementStyleStr"
@@ -38,6 +38,7 @@ const Stil = {
                 if (event.key === 'a') {
                     pause()
                     element.value = null
+                    StyleStr = ''
                 }
             })
 
@@ -53,10 +54,12 @@ const Stil = {
                         height: `${rect.height.value}px`,
                     })
 
+                    plane.style.display = 'block';
+                    tagName.textContent = el.nodeName.toLocaleLowerCase()
+
                     const styleSheet = useElementStyleStr(el);
                     StyleStr = JSON.stringify(styleSheet, null, 2)
-                    plane.style.display = 'block';
-                    (plane.children[0] as HTMLPreElement).innerText = StyleStr
+                    pre.textContent = StyleStr
                 } else {
                     plane.style.display = 'none';
                     setStyle(box, {

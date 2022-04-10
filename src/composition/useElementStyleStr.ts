@@ -1,9 +1,9 @@
 import { unrefElement } from "../shared/unrefElement"
 import { MaybeElementRef } from "../type"
 
-const border = { left: true, top: true, right: true, bottom: true } as any
 
 export function useElementStyleStr(element: MaybeElementRef) {
+    let border = { left: true, top: true, right: true, bottom: true } as any
     const target = unrefElement(element)
     let sheets = document.styleSheets
     const StyleSheet: any = {}
