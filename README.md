@@ -22,6 +22,13 @@ JavaScript gadget, get the style collection of the specified elements of the pag
 
 3. Press and hold the <kbd>c</kbd> key to copy the style text
 
+!!!! When the style content exceeds the display panel, you can use the scroll wheel to scroll up and down, and press and hold <kbd >Ctrl</kbd> to scroll left and right
+
+# Project reference:
+
+- [spacingjs](https://github.com/stevenlei/spacingjs)
+- [vueuse](https://github.com/vueuse/vueuse)
+
 ## License
 
 stiljs is [MIT Licensed](LICENSE).
