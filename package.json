@@ -12,15 +12,16 @@
 		"type": "git",
 		"url": "git+https://github.com/aparasolTree/stiljs.git"
 	},
+	"bugs": {
+		"url": "https://github.com/aparasolTree/stiljs/issues"
+	},
+	"homepage": "https://github.com/aparasolTree/stiljs#readme",
 	"author": "xlws-js",
 	"license": "MIT",
 	"devDependencies": {
 		"typescript": "^4.5.4",
-		"vite": "^2.9.0"
+		"vite": "^2.9.0",
+		"vite-plugin-banner": "^0.2.0"
 	},
-	"unpkg": "dist/stiljs.iife.js",
-	"dependencies": {
-		"el-stylejs": "^0.1.1",
-		"spacingjs": "^1.0.7"
-	}
+	"unpkg": "dist/stiljs.iife.js"
 }

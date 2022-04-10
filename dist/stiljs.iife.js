@@ -1,3 +1,8 @@
+/*!
+ * Stil.js v1.0.0
+ * Copyright (c) 2022 aparasolTree(Xu Le)
+ * Released under the MIT License.
+*/
 var Q=Object.defineProperty;var $=Object.getOwnPropertySymbols;var U=Object.prototype.hasOwnProperty,Z=Object.prototype.propertyIsEnumerable;var F=(v,p,c)=>p in v?Q(v,p,{enumerable:!0,configurable:!0,writable:!0,value:c}):v[p]=c,N=(v,p)=>{for(var c in p||(p={}))U.call(p,c)&&F(v,c,p[c]);if($)for(var c of $(p))Z.call(p,c)&&F(v,c,p[c]);return v};(function(){"use strict";const v=function(){const t=[],n=document.querySelectorAll("link");for(let o=0;o<n.length;o++){let s=n[o];s.getAttribute("rel")==="stylesheet"&&t.push({prev:s.previousElementSibling,el:s,href:s.getAttribute("href")})}return t}();async function p(e,t){const n=e.pop();if(!n)return t&&t();const o=await fetch(n.href).then(i=>i.text()),s=document.createElement("style");s.setAttribute("typs","text/css"),s.textContent=o,document.head.appendChild(s),n.el.remove(),e.length===0?t&&t():p(e,t)}function c(e,t){const n=e.style;for(const[o,s]of Object.entries(t))s&&n.setProperty(o,String(s));return e}const W=e=>Object.prototype.toString.call(e)==="[object Object]";function x(e,t){const n=document.createElement(e.tag);for(let[o,s]of Object.entries(e.props))s&&(W(s)&&(s=Object.entries(s).map(i=>i.join(":")).join(";")),n.setAttribute(o,s));return e.children&&(typeof e.children=="string"?n.textContent=e.children:Array.isArray(e.children)&&e.children.forEach(o=>{x(o,n)})),t.appendChild(n),n}const k=document.body,X=document.head;x({tag:"style",props:{},children:`.stiljs-box {
     position: fixed;
     background-color: #badc58;

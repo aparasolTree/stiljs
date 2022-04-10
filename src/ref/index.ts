@@ -1,3 +1,4 @@
+// 很烂，but能跑
 let activeEffect: EffectFn | null = null
 const bucket = new Map<string | symbol, Set<EffectFn>>()
 const effectStack = [] as EffectFn[]

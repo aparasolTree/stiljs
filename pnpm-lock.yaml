@@ -1,24 +1,16 @@
 lockfileVersion: 5.3
 
 specifiers:
-  el-stylejs: ^0.1.1
-  spacingjs: ^1.0.7
   typescript: ^4.5.4
   vite: ^2.9.0
-
-dependencies:
-  el-stylejs: 0.1.1
-  spacingjs: 1.0.7
+  vite-plugin-banner: ^0.2.0
 
 devDependencies:
   typescript: registry.npmmirror.com/typescript/4.6.3
   vite: registry.npmmirror.com/vite/2.9.1
+  vite-plugin-banner: 0.2.0
 
 packages:
-
-  /el-stylejs/0.1.1:
-    resolution: {integrity: sha512-RH/3bntpzeCXPCUqP8OLwx+sczx1yg6Xl9Y4HwTUF9/LOq0UZz9Egsh8dng96TztXcJUvL3br/o2NUoD8bctOw==}
-    dev: false
 
   /esbuild-android-64/0.14.34:
     resolution: {integrity: sha512-XfxcfJqmMYsT/LXqrptzFxmaR3GWzXHDLdFNIhm6S00zPaQF1TBBWm+9t0RZ6LRR7iwH57DPjaOeW20vMqI4Yw==}
@@ -208,9 +200,9 @@ packages:
     dev: true
     optional: true
 
-  /spacingjs/1.0.7:
-    resolution: {integrity: sha512-iQmfvdsrvpExLE0SgjVDC6sh/xIWJA2ilbZbRAKkY0n9MfbpSm+KnKHgplkFWsia4TIN+HgbdnA9B/aEu1vAHA==}
-    dev: false
+  /vite-plugin-banner/0.2.0:
+    resolution: {integrity: sha512-IBRYVK6v92ihchBYxl6yhT57hr2cRnSX4RX6CJp84vNeWAg/Hht4B5Ywe0jwKA26Kkx/Yx4SGbMp8YLvAqm2pg==}
+    dev: true
 
   registry.npmmirror.com/esbuild/0.14.34:
     resolution: {integrity: sha512-QIWdPT/gFF6hCaf4m7kP0cJ+JIuFkdHibI7vVFvu3eJS1HpVmYHWDulyN5WXwbRA0SX/7ZDaJ/1DH8SdY9xOJg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/esbuild/-/esbuild-0.14.34.tgz}
