@@ -61,7 +61,7 @@ const styleStr = `.stiljs-box {
     height: 100px;
     transition: all 0.05s linear;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 999999;
     display: none;
 }
 
@@ -74,7 +74,7 @@ const styleStr = `.stiljs-box {
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
     backdrop-filter: blur(3px);
-    z-index: 9999;
+    z-index: 999999;
     display: none;
     max-width: 80vw;
 }
@@ -96,7 +96,7 @@ const styleStr = `.stiljs-box {
     background-color: #f1f5f8;
     color: #333;
     border-radius: 6px;
-    z-index: 999;
+    z-index: 999999;
     transition: all 0.5s ease-in-out;
     pointer-events: none;
 }
