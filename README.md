@@ -2,6 +2,8 @@
 
 JavaScript gadget, get the style collection of the specified elements of the page, quickly view the style and save development time
 
+[Effect browsing](https://aparasoltree.github.io/stiljs/)
+
 ![](DisplayDiagram1.jpg)
 
 ![](DisplayDiagram2.jpg)
