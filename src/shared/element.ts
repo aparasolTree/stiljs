@@ -65,7 +65,7 @@ const styleStr = `.stiljs-box {
     display: none;
 }
 
-.stiljs-plane {
+.stiljs-panel {
     position: fixed;
     right: 20px;
     top: 20px;
@@ -77,11 +77,29 @@ const styleStr = `.stiljs-box {
     z-index: 999999;
     display: none;
     max-width: 80vw;
+    max-height: 80vh;
+    overflow: auto
+}
+
+.stiljs-panel::-webkit-scrollbar {
+    width:4px;
+    height: 4px;
+    background-color:#F5F5F5;
+}
+
+.stiljs-panel::-webkit-scrollbar-track {
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.1);
+    border-radius:10px;
+    background-color:#f1f5f8;
+}
+
+.stiljs-panel::-webkit-scrollbar-thumb {
+    border-radius:10px;
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.1);
+    background-color:#ccc;
 }
 
 .stiljs-pre {
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-weight: 700;
     font-size: 12px;
     pointer-events: none;
@@ -114,7 +132,7 @@ export const box = createElement({ tag: 'div', props: { class: 'stiljs-box' } },
 export const plane = createElement({
     tag: 'div',
     props: {
-        class: 'stiljs-plane'
+        class: 'stiljs-panel'
     },
     children: [
         {
@@ -130,3 +148,8 @@ export const plane = createElement({
 export const pre = plane.querySelector('.stiljs-pre')!
 export const tagName = plane.querySelector('.stiljs-tag-name')!
 export const tips = createElement({ tag: 'div', props: { class: 'stiljs-tips' } }, body)
+export function Tip(content: string, delay: number) {
+    tips.textContent = content
+    tips.style.top = '20px'
+    setTimeout(() => { tips.style.top = '-100%' }, delay)
+}

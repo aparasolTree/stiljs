@@ -1,12 +1,14 @@
 import { sheets } from '../shared/sheets'
 import { handleLink } from '../shared/handlerLink'
-import { plane, box, setStyle, tips, tagName, pre } from '../shared/element'
+import { plane, box, setStyle, tagName, pre, Tip } from '../shared/element'
 import { useElementBounding } from "../composition/useElementBounding"
 import { useElementByPoint } from "../composition/useElementByPoint"
 import { useElementStyleStr } from "../composition/useElementStyleStr"
 import { useMouse } from "../composition/useMouse"
 import { useWatch } from "../ref"
 import { unrefElement } from "../shared/unrefElement"
+import { handlerWheel } from '../shared/events'
+import { joinObject } from '../shared/utils'
 
 let StyleStr = ''
 
@@ -24,6 +26,7 @@ document.addEventListener('mouseleave', () => {
 const Stil = {
     start({ copy = true }: ElStyleStartOptions = {}) {
         handleLink(sheets, () => {
+            Tip('sheetStyle loaded 😄', 2000)
             const { x, y } = useMouse({ type: 'client' })
             const { element, pause, resume } = useElementByPoint({ x, y })
             const rect = useElementBounding(element)
@@ -31,11 +34,13 @@ const Stil = {
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'a') {
                     resume()
+                    window.addEventListener("wheel", handlerWheel, { passive: false })
                 }
             })
 
             document.addEventListener('keyup', (event) => {
                 if (event.key === 'a') {
+                    window.removeEventListener("wheel", handlerWheel)
                     pause()
                     element.value = null
                     StyleStr = ''
@@ -46,6 +51,8 @@ const Stil = {
 
             useWatch(() => unrefElement(element), (el) => {
                 if (el) {
+                    plane.scrollTop = 0
+                    plane.scrollLeft = 0
                     setStyle(box, {
                         display: 'block',
                         left: `${rect.left.value}px`,
@@ -75,13 +82,9 @@ const Stil = {
                 if (StyleStr && StyleStr !== "{}") {
                     try {
                         await navigator.clipboard.writeText(joinObject(JSON.parse(StyleStr)))
-                        tips.textContent = 'copy success!!! 😄'
-                        tips.style.top = '20px'
+                        Tip('copy success!!! 😄', 2000)
                     } catch (error) {
-                        tips.textContent = 'copy error!!! (。・＿・。)ﾉI’m sorry~'
-                        tips.style.top = '20px'
-                    } finally {
-                        setTimeout(() => { tips.style.top = '-100%' }, 2000)
+                        Tip('copy error!!! (。・＿・。)ﾉI’m sorry~', 2000)
                     }
                 }
             }
@@ -89,12 +92,6 @@ const Stil = {
     }
 }
 
-function joinObject(obj: object) {
-    let _str = '{\n'
-    Object.entries(obj).map(([key, value]) => {
-        _str += `    ${key}: ${value};\n`
-    })
-    return _str + '}'
-}
+
 
 export default Stil
